@@ -1,7 +1,8 @@
 import React from "react";
 import "./navbar.css";
 import { NotificationsNone,Language,Settings } from "@material-ui/icons";
-import {ReactComponent as Imlogo } from "../../src/assets/im-logo .svg"
+// import {ReactComponent as Imlogo } from "../../src/assets/im-logo .svg"
+import {ReactComponent as Imlogo} from "../../assets/im-logo .svg"
 
 export default function Navbar() {
   return (

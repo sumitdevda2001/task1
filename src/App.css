@@ -1,0 +1,25 @@
+.title{
+    text-align: center;
+    font-size: 2.75rem;
+    
+    
+}
+
+.member-container{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+
+   
+
+}
+.box{
+    display: block;
+    margin-left: 20px;
+    border: 1px solid black;
+    
+
+}
+.text_container{
+    background-color: cadetblue;
+}
