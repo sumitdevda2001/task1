@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: burlywood;
+  background-color: rgb(221, 219, 217);
 }
 
 .logo {
@@ -54,7 +54,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: #c5b5b3;
+  background: #dfd4d3;
   font-family: "Lato", sans-serif;
 }
 
