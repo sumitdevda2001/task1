@@ -1,5 +1,5 @@
-// export const Users = [
-const MEMBERS_DATA = [
+
+export const MEMBERS_DATA = [
   {
     title: "Founding Team Members",
     members: [

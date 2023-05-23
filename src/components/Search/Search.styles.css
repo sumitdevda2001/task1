@@ -1,9 +1,28 @@
-.search-box {
-    -webkit-appearance: none;
-    border: none;
-    outline: none;
-    padding: 10px;
-    width: 150px;
-    line-height: 30px;
-    margin-bottom: 30px;
-  }
+.search {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 180px;
+  font-size: 16px;
+  line-height: 15px;
+  border-radius: 25px;
+  font-family: 'League Spartan', sans-serif;
+  /* margin-bottom: 30px; */
+
+  /* Effects and Animation */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.search:hover {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+.search:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

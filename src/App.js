@@ -1,17 +1,21 @@
 import React from "react";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./components/navbar/navbar.component.jsx";
 import Home from "./components/Home/Home.jsx";
 import { Routes, Route } from "react-router-dom";
 import SinglePage from "./components/SinglePage/SinglePage.comonent";
 import Error from "./Error";
+import { useState,useEffect } from "react";
 import MEMBERS_DATA from "./users";
 import './App.css'
 
+
 const App = () => {
+  
+  
   return (
     <div className="App">
       <Navbar />
-      
+     
       <h1 className="title0">{MEMBERS_DATA[0].title}</h1>
       <div className="member-container">
       {MEMBERS_DATA[0].members.map((member) => (
