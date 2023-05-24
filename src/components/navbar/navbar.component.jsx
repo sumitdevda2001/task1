@@ -8,33 +8,32 @@ import MEMBERS_DATA from "../../users";
 
 function Navbar() {
   const [searchField, setSearchField] = useState("");
-  console.log(searchField );
+  console.log(searchField);
   const [members, setMembers] = useState([]);
   const [filteredMembers, setFilterMembers] = useState(members);
 
   useEffect(() => {
-    setMembers(MEMBERS_DATA)
-  },[])
-  console.log(members)
+    setMembers(MEMBERS_DATA);
+  }, []);
+  console.log(members);
+
   useEffect(() => {
-    console.log('effects is fired ')
+    console.log("effects is fired ");
     const newFilteredMembers = members.filter((members) => {
-      return members.name.toLocaleLowerCase().includes(searchField);
+      return members.members.forEach((element) => {
+        element.first_name.toLocaleLowerCase().includes(searchField);
+      });
     });
 
     setFilterMembers(newFilteredMembers);
+    console.log("Effect is firing");
   }, [members, searchField]);
-
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
   };
 
-  const FilteredMembers = members.filter((members) => {
-    return members.name.toLocaleLowerCase().includes(searchField);
-  });
-  console.log(filteredMembers)
   return (
     <div className="topbar">
       <div className="topbarWrapper">
@@ -43,12 +42,11 @@ function Navbar() {
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
-            <Search
+            {/* <Search
               className="custom-search"
               placeholder="Search Members"
               onChangeHandler={onSearchChange}
-            />
-            
+            /> */}
             &nbsp; &nbsp;
             <span className="Home">Home</span>&nbsp;&nbsp;&nbsp;
             <span className="about">About</span>&nbsp;&nbsp;&nbsp;

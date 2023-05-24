@@ -1,123 +1,56 @@
 import React from "react";
-import Navbar from "./components/navbar/navbar.component.jsx";
-import Home from "./components/Home/Home.jsx";
-import { Routes, Route } from "react-router-dom";
-import SinglePage from "./components/SinglePage/SinglePage.comonent";
-import Error from "./Error";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import MEMBERS_DATA from "./users";
-import './App.css'
-
+import "./App.css";
+import Cardlist from "./components/card-list/card-list.component.jsx";
+import Search from "./components/Search/Search.component.jsx";
+import Navbar from "./components/navbar/navbar.component";
 
 const App = () => {
-  
-  
+  const [searchField, setSearchField] = useState("");
+  console.log(searchField);
+  const [members, setMembers] = useState([]);
+  const [filteredMembers, setFilterMembers] = useState(members);
+
+  useEffect(() => {
+    setMembers(MEMBERS_DATA);
+  }, []);
+  console.log(members);
+
+  useEffect(() => {
+    console.log("effects is fired ");
+    console.log("members", members);
+    const newFilteredMembers = members
+      ?.flatMap(({ members }) => members)
+      ?.filter(({ first_name }) => first_name.includes(searchField));
+    console.log("newFilteredMembers", newFilteredMembers);
+
+    setFilterMembers(newFilteredMembers);
+    console.log(newFilteredMembers);
+  }, [members, searchField]);
+  console.log(members, searchField);
+
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
+  };
+  const onChangeSearchHandler = (event) => {
+    setSearchField(event.target.value);
+  };
   return (
-    <div className="App">
+    <>
       <Navbar />
-     
+      <div className="search-box">
+        <input
+          type="search..."
+          placeholder={"Search Members"}
+          value={searchField}
+          onChange={onChangeSearchHandler}
+        />
+      </div>
       <h1 className="title0">{MEMBERS_DATA[0].title}</h1>
-      <div className="member-container">
-      {MEMBERS_DATA[0].members.map((member) => (
-        <div className="card">
-      <div  key={member.id}>
-      <div className="box">
-      <div className="image">
-      <img src={member.image} alt={`${member.first_name} ${member.last_name}`} />
-      </div>
-      <div className="text_container">
-      <p className="text-depart">{member.Department}</p>
-        <h2 className="text-name">{`${member.first_name} ${member.last_name}`}</h2>
-        </div>
-        </div>
-      </div>
-      </div>
-      ))}
-      
-      </div>
-      
-
-
-
-      <h1 className="title1">{MEMBERS_DATA[1].title}</h1>
-      <div className="member-container">
-      {MEMBERS_DATA[1].members.slice(0, 5).map((member) => (
-        <div className="card">
-      <div key={member.id}>
-      <div className="box">
-      <div className="image">
-      <img src={member.image} alt={`${member.first_name} ${member.last_name}`} />
-      </div>
-      <div className="text_container">
-      <p className="text-depart">{member.Department}</p>
-        <h2 className="text-name">{`${member.first_name} ${member.last_name}`}</h2>
-        </div>
-        </div>
-      </div>
-      </div>
-      ))}
-      </div> 
-
-
-      <div className="space" ></div>
-      <div className="member-container">
-      {MEMBERS_DATA[1].members.slice(5, 10).map((member) => (
-        <div className="card">
-      <div key={member.id}>
-      <div className="box">
-      <div className="image">
-      <img src={member.image} alt={`${member.first_name} ${member.last_name}`} />
-      </div>
-      <div className="text_container">
-      <p className="text-depart">{member.Department}</p>
-        <h2 className="text-name">{`${member.first_name} ${member.last_name}`}</h2>
-        </div>
-        </div>
-      </div>
-      </div>
-      ))}
-      </div>
-
-      <div className="space" ></div>
-      <div className="member-container">
-      {MEMBERS_DATA[1].members.slice(10, 15).map((member) => (
-        <div className="card">
-      <div key={member.id}>
-      <div className="box">
-      <div className="image">
-      <img src={member.image} alt={`${member.first_name} ${member.last_name}`} />
-      </div>
-      <div className="text_container">
-      <p className="text-depart">{member.Department}</p>
-        <h2 className="text-name">{`${member.first_name} ${member.last_name}`}</h2>
-        </div>
-        </div>
-      </div>
-      </div>
-      ))}
-      </div>
-
-      <div className="space" ></div>
-      <div className="member-container-last">
-      {MEMBERS_DATA[1].members.slice(15, 20).map((member) => (
-        <div className="card">
-      <div key={member.id}>
-      <div className="box">
-      <div className="image">
-      <img src={member.image} alt={`${member.first_name} ${member.last_name}`} />
-      </div>
-      <div className="text_container">
-      <p className="text-depart">{member.Department}</p>
-        <h2 className="text-name">{`${member.first_name} ${member.last_name}`}</h2>
-        </div>
-        </div>
-      </div>
-      </div>
-      ))}
-      </div>
-      <div className="space" ></div>
-      
-    </div>
+      <Cardlist filteredMembers={filteredMembers}></Cardlist>
+    </>
   );
 };
 

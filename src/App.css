@@ -120,3 +120,39 @@
     padding-right: 75px;
   }
 
+
+
+  
+  .search-box {
+
+    margin-left: 575px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 20px;
+    width: 200px;
+    font-size: 50px;
+    
+    border-radius: 50px;
+    font-family: 'League Spartan', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+  }
+  
+  .search-box:hover {
+    transform: rotateY(15deg);
+  }
+  
+  .search-box:focus {
+    transform: rotateY(0);
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
