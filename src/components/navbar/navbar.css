@@ -1,8 +1,14 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #ffefed;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+}
+
+
 .topbar {
   width: 100%;
   height: 60px;
-  /* background-color: white; */
-  background-color: rgb(255, 0, 0);
 }
 
 .topbarWrapper {
@@ -34,14 +40,9 @@
 }
 .logo:hover {
   transition: 1s ease;
-  /* transform: rotateZ(-360deg ); */
   margin-left: -20px;
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.57);
   background-color: floralwhite;
-  /* transition: all 0.5s ease-in-out 0s; */
-  /* border: 2px solid transparent; */
 }
 
 .topbarIconContainer {
@@ -51,12 +52,7 @@
   color: #555;
   font-size: 1.3em;
 }
-body {
-  margin: 0px;
-  padding: 0px;
-  background: #dfd4d3;
-  font-family: "Lato", sans-serif;
-}
+
 
 .Search {
   float: none;
@@ -64,17 +60,6 @@ body {
   width: 30%;
   margin: 10% auto;
   background: rgb(241, 46, 46);
-}
-
-nav ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-nav li {
-  float: none;
-  width: 100%;
 }
 
 .Search {
@@ -95,79 +80,7 @@ nav li {
   border-bottom: 0px;
   color: #fff;
 }
-.about:first-child a {
-  border-left: 10px solid #3498db;
-}
-.Contactus:nth-child(2) a {
-  border-left: 10px solid #ffd071;
-}
-.Signup:nth-child(3) a {
-  border-left: 10px solid #f0776c;
-}
-.login:last-child a {
-  border-left: 10px solid #1abc9c;
-}
 
-nav Search:after {
-  content: "";
-  height: 100%;
-  left: 0;
-  top: 0;
-  width: 0px;
-  position: absolute;
-  transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
-  z-index: -1;
-}
-
-nav li a:hover:after {
-  width: 100%;
-}
-.Home:first-child a:after {
-  background: #3498db;
-}
-nav li:nth-child(2) a:after {
-  background: #ffd071;
-}
-nav li:nth-child(3) a:after {
-  background: #f0776c;
-}
-nav li:last-child a:after {
-  background: #1abc9c;
-}
-
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 100;
-  src: local("Lato Hairline"), local("Lato-Hairline"),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff)
-      format("woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Lato Light"), local("Lato-Light"),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff)
-      format("woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Lato Regular"), local("Lato-Regular"),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff)
-      format("woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Lato Bold"), local("Lato-Bold"),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff)
-      format("woff");
-}
 .topIconBadge {
   width: 15px;
   height: 15px;
@@ -183,15 +96,8 @@ nav li:last-child a:after {
   font-size: 10px;
 }
 .topIconBadge:hover {
-  /* transition:  1s ease-in; */
-  /* transform: rotateZ(-360deg ); */
-  /* margin-left: 2px ; */
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.57);
   background-color: floralwhite;
-  /* transition: all 0.5s ease-in-out 0s; */
-  /* border: 2px solid transparent; */
 }
 
 .topAvatar {
@@ -202,13 +108,18 @@ nav li:last-child a:after {
   background-color: #555;
 }
 .topAvatar:hover {
-  /* transition:  1s ease-in; */
-  /* transform: rotateZ(-360deg ); */
-  /* margin-left: 2px ; */
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.57);
   background-color: floralwhite;
-  /* transition: all 0.5s ease-in-out 0s; */
-  /* border: 2px solid transparent; */
+}
+
+.Home {
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+}
+
+.about {
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+}
+
+.Contactus {
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
 }
